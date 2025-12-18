@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PortfolioNow - 支援中心</title>
+    <style>
+        :root {
+            --primary-color: #1E3A5F;
+            --text-color: #333;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --accent-color: #2DD4BF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .logo {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            border-radius: 18px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 16px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 20px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h2::before {
+            content: '';
+            width: 4px;
+            height: 20px;
+            background: linear-gradient(180deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        h3 {
+            color: var(--primary-color);
+            font-size: 16px;
+            margin: 20px 0 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 15px 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+
+        .faq-answer {
+            color: #555;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #e8f4f8 0%, #e8f4f8 100%);
+            padding: 15px 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .contact {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, var(--primary-color), #2a4a6f);
+            color: white;
+            border-radius: 12px;
+        }
+
+        .contact h2 {
+            color: white;
+        }
+
+        .contact h2::before {
+            background: white;
+        }
+
+        .contact a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--accent-color);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 15px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #25b8a6;
+            text-decoration: none;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #999;
+            font-size: 14px;
+        }
+
+        .lang-switch {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+
+        .lang-switch a {
+            color: var(--primary-color);
+            text-decoration: none;
+            padding: 5px 10px;
+            border: 1px solid var(--primary-color);
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .lang-switch a:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .feature-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .feature-icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .feature-title {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px 15px;
+            }
+
+            .card {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="lang-switch">
+            <a href="support-en.html">English</a>
+        </div>
+
+        <header>
+            <div class="logo">P</div>
+            <h1>PortfolioNow</h1>
+            <p class="subtitle">支援中心</p>
+        </header>
+
+        <div class="card">
+            <h2>歡迎使用 PortfolioNow</h2>
+            <p>PortfolioNow 是一款專為美股投資者設計的投資組合管理工具，幫助您輕鬆追蹤持倉、記錄交易、分析損益。</p>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">📊</div>
+                    <div class="feature-title">投資組合總覽</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">💼</div>
+                    <div class="feature-title">持倉管理</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📝</div>
+                    <div class="feature-title">交易記錄</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🔒</div>
+                    <div class="feature-title">隱私安全</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>快速入門</h2>
+
+            <h3>1. 新增持倉</h3>
+            <p>點擊主畫面右上角的「+」按鈕，輸入股票代號（如 AAPL、TSLA）即可新增持倉。系統會自動取得即時股價。</p>
+
+            <h3>2. 記錄交易</h3>
+            <p>在持倉詳情頁面點擊「新增交易」，選擇交易類型（買入、賣出、股息等），輸入日期、數量和價格即可完成記錄。</p>
+
+            <h3>3. 匯入券商資料</h3>
+            <p>前往「設定」→「資料管理」，選擇您使用的券商（Firstrade 或 Charles Schwab），依照指示匯入交易記錄。</p>
+
+            <h3>4. 匯出備份</h3>
+            <p>在「設定」→「資料管理」中點擊「匯出資料」，將您的所有資料以 JSON 格式備份。</p>
+        </div>
+
+        <div class="card">
+            <h2>常見問題</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: 我的資料會上傳到雲端嗎？</div>
+                <div class="faq-answer">A: 不會。PortfolioNow 採用「本地優先」設計，所有資料都儲存在您的裝置上，不會上傳至任何伺服器。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: 股價多久更新一次？</div>
+                <div class="faq-answer">A: 股價透過 Yahoo Finance API 取得，每次開啟 App 或手動下拉刷新時會自動更新。請注意股價可能有 15-20 分鐘的延遲。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: 如何隱藏金額？</div>
+                <div class="faq-answer">A: 在主畫面點擊右上角的眼睛圖示，即可切換金額顯示/隱藏狀態。這在公共場合特別實用。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: 支援哪些券商的資料匯入？</div>
+                <div class="faq-answer">A: 目前支援 Firstrade（CSV 格式）和 Charles Schwab（JSON 格式）。我們會持續新增更多券商支援。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: 如何啟用 Face ID / Touch ID？</div>
+                <div class="faq-answer">A: 前往「設定」→「安全性」，開啟 Face ID 或 Touch ID 開關即可。每次開啟 App 都需要驗證。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: 換手機時如何轉移資料？</div>
+                <div class="faq-answer">A: 先在舊手機使用「匯出資料」功能將資料備份為 JSON 檔案，然後在新手機安裝 App 後使用「匯入資料」功能還原。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: App 支援選擇權嗎？</div>
+                <div class="faq-answer">A: 是的，PortfolioNow 完整支援美股選擇權的追蹤與記錄。</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>疑難排解</h2>
+
+            <h3>股價無法更新</h3>
+            <ul>
+                <li>請確認裝置已連線至網路</li>
+                <li>嘗試下拉刷新或重新開啟 App</li>
+                <li>部分股票代號可能需要加上交易所後綴（如 .HK、.TW）</li>
+            </ul>
+
+            <h3>匯入失敗</h3>
+            <ul>
+                <li>請確認檔案格式正確（Firstrade 為 CSV，Charles Schwab 為 JSON）</li>
+                <li>確認檔案未經修改或損毀</li>
+                <li>嘗試重新從券商網站下載交易記錄</li>
+            </ul>
+
+            <h3>Face ID 無法使用</h3>
+            <ul>
+                <li>請確認裝置支援 Face ID 或 Touch ID</li>
+                <li>前往 iOS 設定確認 Face ID 已正確設定</li>
+                <li>嘗試在 App 設定中關閉後重新開啟</li>
+            </ul>
+        </div>
+
+        <div class="card contact">
+            <h2>聯絡我們</h2>
+            <p>如果您有任何問題、建議或回饋，歡迎與我們聯繫：</p>
+            <p><a href="mailto:ervis0718@gmail.com">ervis0718@gmail.com</a></p>
+            <a href="mailto:ervis0718@gmail.com?subject=PortfolioNow%20支援請求" class="btn">發送郵件</a>
+        </div>
+
+        <div class="card">
+            <h2>相關連結</h2>
+            <ul>
+                <li><a href="privacy.html">隱私權政策</a></li>
+            </ul>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 Pongan Studio. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
